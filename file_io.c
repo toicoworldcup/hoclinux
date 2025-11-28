@@ -10,12 +10,12 @@
 #define SIZE 100
 int main(){
     int fd;
-    char data[]="hoc linux";
+    char data[]=" bai 1";
     char buffer[SIZE];
     __ssize_t bytes_read;
     printf("ghi du lieu vao file \n");
     //mo file
-    fd = open("hello.txt",O_WRONLY|O_CREAT|O_TRUNC,0644);
+    fd = open("hello.txt",O_WRONLY|O_CREAT,0644);
     if(fd== -1){
         perror("loi khong mo duoc file \n");
         return EXIT_FAILURE;
