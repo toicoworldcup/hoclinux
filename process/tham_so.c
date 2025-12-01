@@ -3,7 +3,7 @@
 
 int main(int argc, char *argv[]) {
     
-    printf("--- DOI SO DONG LENH ---\n");
+    printf("DOI SO DONG LENH\n");
     printf("So luong doi so (argc): %d\n", argc);
     
     for (int i = 0; i < argc; i++) {
