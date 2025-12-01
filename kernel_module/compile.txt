@@ -1,0 +1,3 @@
+Native Compile (Biên dịch Nội bộ): Biên dịch và chạy trên cùng một kiến trúc (PC → PC)
+
+Cross Compile (Biên dịch Chéo): Biên dịch trên PC (x86) để chạy trên kiến trúc khác .
