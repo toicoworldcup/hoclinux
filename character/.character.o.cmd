@@ -1103,6 +1103,10 @@ deps_character.o := \
   /usr/src/linux-headers-6.14.0-36-generic/include/linux/device/driver.h \
   /usr/src/linux-headers-6.14.0-36-generic/arch/x86/include/asm/device.h \
   /usr/src/linux-headers-6.14.0-36-generic/include/linux/pm_wakeup.h \
+  /usr/src/linux-headers-6.14.0-36-generic/include/linux/gpio.h \
+    $(wildcard include/config/GPIOLIB) \
+  /usr/src/linux-headers-6.14.0-36-generic/include/linux/gpio/consumer.h \
+    $(wildcard include/config/GPIO_SYSFS) \
 
 character.o: $(deps_character.o)
 
