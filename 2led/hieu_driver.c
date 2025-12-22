@@ -71,7 +71,7 @@ static int __init chardev_init(void) {
     //tao device file
     my_class = class_create(DRIVER_NAME);
     my_device = device_create(my_class, NULL, dev_num, NULL, DRIVER_NAME);
-    //xin cap quyen dieu khien gpio
+    //xin cap quyen dieu khien gpio t
     gpio_request_one(gpio_red, GPIOF_OUT_INIT_LOW, "red ");
     gpio_request_one(gpio_blue, GPIOF_OUT_INIT_LOW, "blue");
 
