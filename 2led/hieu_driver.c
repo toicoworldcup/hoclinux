@@ -47,10 +47,29 @@ static ssize_t my_write(struct file *file, const char __user *buf, size_t count,
     
     return count; 
 }
+
+static ssize_t my_read(struct file *file, char __user *buf, size_t count, loff_t *ppos) {
+    char message[64];
+    int len;
+    int red_sta = gpio_get_value(gpio_red);
+    int blue_sta = gpio_get_value(gpio_blue);
+    if (*ppos > 0) return 0;
+    len = sprintf(message,"red led : %s,blue red: %s\n",
+                (red_sta?"ON":"OFF"),
+                (blue_sta)?"ON":"OFF");
+    if(copy_to_user(buf,message,len)){
+        return -EFAULT;
+    }
+    *ppos += len;
+    
+    return len; 
+}
+
 //dang ki file op voi kernel
 static const struct file_operations fops = {
     .owner = THIS_MODULE,
     .write = my_write,
+    .read = my_read,
 };
 //khoi tao device file
 static int __init chardev_init(void) {
