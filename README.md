@@ -3,3 +3,5 @@
 3.sudo dtoverlay led_overlay.dtbo
 4.sudo insmod hieu_driver.ko
 5.chmod 666 /dev/hieu_driver
+
+//sudo iwconfig wlan0 power off
